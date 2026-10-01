@@ -1,4 +1,4 @@
-fimport type {
+import type {
   AuthRequest,
   OAuthHelpers,
 } from "@cloudflare/workers-oauth-provider";
