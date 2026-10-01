@@ -1,4 +1,4 @@
-import type {
+fimport type {
   AuthRequest,
   OAuthHelpers,
 } from "@cloudflare/workers-oauth-provider";
@@ -495,7 +495,7 @@ app.get("/callback", async (c) => {
       scope: oauthReqInfo.scope,
       props: userProfile,
     });
-
+console.log("OAuth redirectTo:", redirectTo);
   const response = c.redirect(
     redirectTo,
     302
