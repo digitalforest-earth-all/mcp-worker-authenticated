@@ -12,6 +12,10 @@ interface Env {
 }
 
 const app = new Hono<{ Bindings: Env }>();
+app.use("*", async (c, next) => {
+  console.log("AUTH_HANDLER_REQUEST", c.req.method, c.req.path);
+  await next();
+});
 
 const GOOGLE_AUTHORIZE_URL =
   "https://accounts.google.com/o/oauth2/v2/auth";
